@@ -87,12 +87,12 @@
 
 
 
-<meta name="description" content="本人是一名iOS开发程序员，最近打算开个博客，一来是对自己掌握知识的一个记录，二来写文章也能锻炼一下思维和文笔。 近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，那么第一篇文章就来说说SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别 1.常见的自">
+<meta name="description" content="近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，于是想写篇文章记录一下SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别 1.常见的自建iOS库分为两种形式，一种是xxx.a，还有一种是xxx.framework。这两种库有什么区别呢？ .a库只能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发-使用OC&#x2F;Swift开发静态库&#x2F;动态库（SDK开发）">
 <meta property="og:url" content="http://yoursite.com/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/index.html">
 <meta property="og:site_name" content="田野的技术博客">
-<meta property="og:description" content="本人是一名iOS开发程序员，最近打算开个博客，一来是对自己掌握知识的一个记录，二来写文章也能锻炼一下思维和文笔。 近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，那么第一篇文章就来说说SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别 1.常见的自">
+<meta property="og:description" content="近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，于是想写篇文章记录一下SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别 1.常见的自建iOS库分为两种形式，一种是xxx.a，还有一种是xxx.framework。这两种库有什么区别呢？ .a库只能">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image1.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image2.png">
@@ -113,10 +113,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image17.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image18.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image19.png">
-<meta property="og:updated_time" content="2019-03-03T16:09:03.297Z">
+<meta property="og:updated_time" content="2019-03-05T12:45:59.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发-使用OC&#x2F;Swift开发静态库&#x2F;动态库（SDK开发）">
-<meta name="twitter:description" content="本人是一名iOS开发程序员，最近打算开个博客，一来是对自己掌握知识的一个记录，二来写文章也能锻炼一下思维和文笔。 近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，那么第一篇文章就来说说SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别 1.常见的自">
+<meta name="twitter:description" content="近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，于是想写篇文章记录一下SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别 1.常见的自建iOS库分为两种形式，一种是xxx.a，还有一种是xxx.framework。这两种库有什么区别呢？ .a库只能">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image1.png">
 
 
@@ -362,8 +362,7 @@
       
 
       
-        <p>本人是一名iOS开发程序员，最近打算开个博客，一来是对自己掌握知识的一个记录，二来写文章也能锻炼一下思维和文笔。</p>
-<p>近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，那么第一篇文章就来说说SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。</p>
+        <p>近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，于是想写篇文章记录一下SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。</p>
 <p>目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。</p>
 <p>一、iOS库的区别</p>
 <p>1.常见的自建iOS库分为两种形式，一种是xxx.a，还有一种是xxx.framework。这两种库有什么区别呢？</p>
