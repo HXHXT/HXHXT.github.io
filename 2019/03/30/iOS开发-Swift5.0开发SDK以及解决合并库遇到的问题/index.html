@@ -87,13 +87,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="田野的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+<meta name="description" content="个人博客地址：hxhxt.cn Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。 首先感谢一位读者朋友的提醒王大大大大人的博客 ，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。 按照以前的做法，合并真机库和模拟器库我们只需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题">
+<meta property="og:url" content="http://yoursite.com/2019/03/30/iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题/index.html">
 <meta property="og:site_name" content="田野的技术博客">
+<meta property="og:description" content="个人博客地址：hxhxt.cn Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。 首先感谢一位读者朋友的提醒王大大大大人的博客 ，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。 按照以前的做法，合并真机库和模拟器库我们只需">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-30T08:30:06.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="田野的技术博客">
+<meta name="twitter:title" content="iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题">
+<meta name="twitter:description" content="个人博客地址：hxhxt.cn Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。 首先感谢一位读者朋友的提醒王大大大大人的博客 ，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。 按照以前的做法，合并真机库和模拟器库我们只需">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/03/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/30/iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题/">
 
 
 
 
 
-  <title> 归档 | 田野的技术博客 </title>
+  <title> iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题 | 田野的技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -152,7 +156,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,134 +250,158 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 4 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2019">2019</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/30/iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题/" itemprop="url">
-              
-                <span itemprop="name">iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-30T16:28:26+08:00" content="2019-03-30">
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/25/iOS开发-修改图片的HSB（HSV）值/" itemprop="url">
-              
-                <span itemprop="name">iOS开发-修改图片的HSB（HSV）值</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T22:33:26+08:00" content="2019-03-25">
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/03/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/" itemprop="url">
-              
-                <span itemprop="name">iOS开发-使用OC/Swift开发静态库/动态库（SDK开发）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-03T23:24:36+08:00" content="2019-03-03">
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HXHXT">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="田野的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-30T16:28:26+08:00">
+                2019-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>个人博客地址：<a href="http://hxhxt.cn" target="_blank" rel="noopener">hxhxt.cn</a></p>
+<p>Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。</p>
+<p>首先感谢一位读者朋友的提醒<a href="https://www.jianshu.com/u/20156e21ce6e" target="_blank" rel="noopener">王大大大大人的博客 </a>，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。</p>
+<p>按照以前的做法，合并真机库和模拟器库我们只需要合并可执行文件和Modules文件就可以，但苹果在Swift5.0修改了生成xxx-Swift.h文件的方式，所以还需要合并该文件，合并方式如下：</p>
+<p>打开真机库下Headers文件夹中的xxx-Swift.h文件，在末尾添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#if 0</span><br><span class="line">#elif defined(__x86_64__) &amp;&amp; __x86_64__</span><br><span class="line"></span><br><span class="line">// mark</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>然后复制模拟器库下Headers文件夹中的xxx-Swift.h文件中全部内容，粘贴到上面的mark位置，就实现了两个文件的合并了。</p>
+<p>对于Swift开发库还不熟悉的朋友可以参考我之前的博客<a href="https://www.jianshu.com/p/e05363d700dd" target="_blank" rel="noopener">iOS开发-使用OC/Swift开发静态库/动态库(SDK开发)</a></p>
+<hr>
+<p><strong>对于ABI稳定的一些测试。</strong></p>
+<p>XCode10.2可以下兼容到4.0，也就是我们使用xcode9.0以上版本开发的库，都可以在XCode10.2上使用了。</p>
+<p>对于Swift版APP包体大小的问题，如果Deployment Target设置成12.2或以上，编译出来的ipa包体是不会包含Swift支持库的，可以解压api包进入其中来验证，在Framework文件夹中并不会包含支持库。</p>
+<p>但是只要Deployment Target在12.2以下，那么还是会包含支持库，然而现在肯定还得兼容低版本系统的，所以这个迁移得是一个漫长的过程了。</p>
+<p>结论是苹果确实在Swift5.0实现了ABI稳定，并且从iOS12.2开始的系统，Swift支持库都已经内置在了系统中。</p>
+<p>然后我赶紧把手机升级到12.2了，看看能不能给我腾点内存出来~</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/25/iOS开发-修改图片的HSB（HSV）值/" rel="next" title="iOS开发-修改图片的HSB（HSV）值">
+                <i class="fa fa-chevron-left"></i> iOS开发-修改图片的HSB（HSV）值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -381,6 +409,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -574,11 +606,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
