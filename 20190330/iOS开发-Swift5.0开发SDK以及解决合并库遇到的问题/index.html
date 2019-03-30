@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="欢迎光临我的博客~">
+<meta name="description" content="Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。 首先感谢一位读者朋友的提醒王大大大大人的博客 ，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。 按照以前的做法，合并真机库和模拟器库我们只需要合并可执行文件和Modules">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/20190218/Hello">
+<meta property="og:title" content="iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题">
+<meta property="og:url" content="http://yoursite.com/20190330/iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题/index.html">
 <meta property="og:site_name" content="田野的技术博客">
-<meta property="og:description" content="欢迎光临我的博客~">
+<meta property="og:description" content="Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。 首先感谢一位读者朋友的提醒王大大大大人的博客 ，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。 按照以前的做法，合并真机库和模拟器库我们只需要合并可执行文件和Modules">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-30T15:33:21.355Z">
+<meta property="og:updated_time" content="2019-03-30T15:36:00.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello">
-<meta name="twitter:description" content="欢迎光临我的博客~">
+<meta name="twitter:title" content="iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题">
+<meta name="twitter:description" content="Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。 首先感谢一位读者朋友的提醒王大大大大人的博客 ，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。 按照以前的做法，合并真机库和模拟器库我们只需要合并可执行文件和Modules">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/20190218/Hello">
+  <link rel="canonical" href="http://yoursite.com/20190330/iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题/">
 
 
 
 
 
-  <title> Hello | 田野的技术博客 </title>
+  <title> iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题 | 田野的技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/20190218/Hello">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/20190330/iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HXHXT">
@@ -281,7 +281,7 @@
             
             
               
-                Hello
+                iOS开发-Swift5.0开发SDK以及解决合并库遇到的问题
               
             
           </h1>
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T21:18:24+08:00">
-                2019-02-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-30T16:28:26+08:00">
+                2019-03-30
               </time>
             
 
@@ -332,7 +332,20 @@
       
 
       
-        <p>欢迎光临我的博客~</p>
+        <p>Swift5.0已经正式发布了，XCode10.2也已经开放下载，今天下载下来体验了一下，测试了一下ABI稳定的相关内容，以及尝试使用静态库和动态库。</p>
+<p>首先感谢一位读者朋友的提醒<a href="https://www.jianshu.com/u/20156e21ce6e" target="_blank" rel="noopener">王大大大大人的博客 </a>，发现Swift5.0在使用lipo合并真机库和模拟器库时，需要合并生成的xxx-Swift.h，否则会遇到找不到类的问题。</p>
+<p>按照以前的做法，合并真机库和模拟器库我们只需要合并可执行文件和Modules文件就可以，但苹果在Swift5.0修改了生成xxx-Swift.h文件的方式，所以还需要合并该文件，合并方式如下：</p>
+<p>打开真机库下Headers文件夹中的xxx-Swift.h文件，在末尾添加以下代码：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="meta">#if 0</span></span><br><span class="line"><span class="meta">#elif defined(__x86_64__) &amp;&amp; __x86_64__</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// mark</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#endif</span></span><br></pre></td></tr></table></figure>
+<p>然后复制模拟器库下Headers文件夹中的xxx-Swift.h文件中全部内容，粘贴到上面的mark位置，就实现了两个文件的合并了。</p>
+<p>对于Swift开发库还不熟悉的朋友可以参考我之前的博客<a href="https://www.jianshu.com/p/e05363d700dd" target="_blank" rel="noopener">iOS开发-使用OC/Swift开发静态库/动态库(SDK开发)</a></p>
+<hr>
+<p><strong>对于ABI稳定的一些测试。</strong></p>
+<p>XCode10.2可以下兼容到4.0，也就是我们使用xcode9.0以上版本开发的库，都可以在XCode10.2上使用了。</p>
+<p>对于Swift版APP包体大小的问题，如果Deployment Target设置成12.2或以上，编译出来的ipa包体是不会包含Swift支持库的，可以解压api包进入其中来验证，在Framework文件夹中并不会包含支持库。</p>
+<p>但是只要Deployment Target在12.2以下，那么还是会包含支持库，然而现在肯定还得兼容低版本系统的，所以这个迁移得是一个漫长的过程了。</p>
+<p>结论是苹果确实在Swift5.0实现了ABI稳定，并且从iOS12.2开始的系统，Swift支持库都已经内置在了系统中。</p>
+<p>然后我赶紧把手机升级到12.2了，看看能不能给我腾点内存出来~</p>
 
       
     </div>
@@ -363,15 +376,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/20190325/iOS开发-修改图片的HSB（HSV）值/" rel="next" title="iOS开发-修改图片的HSB（HSV）值">
+                <i class="fa fa-chevron-left"></i> iOS开发-修改图片的HSB（HSV）值
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）" rel="prev" title="iOS开发-使用OC/Swift开发静态库/动态库（SDK开发）">
-                iOS开发-使用OC/Swift开发静态库/动态库（SDK开发） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -432,7 +445,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
