@@ -90,34 +90,34 @@
 <meta name="description" content="近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，于是想写篇文章记录一下SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别常见的自建iOS库分为两种形式，一种是xxx.a，还有一种是xxx.framework。这两种库有什么区别呢？ .a库只能是静态">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发-使用OC&#x2F;Swift开发静态库&#x2F;动态库（SDK开发）">
-<meta property="og:url" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/03/iOS-OC-Swift-SDK/index.html">
 <meta property="og:site_name" content="田野的技术博客">
 <meta property="og:description" content="近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，于是想写篇文章记录一下SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别常见的自建iOS库分为两种形式，一种是xxx.a，还有一种是xxx.framework。这两种库有什么区别呢？ .a库只能是静态">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image1.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image2.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image3.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image4.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image5.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image6.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image7.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image8.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image9.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image10.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image11.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image12.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image13.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image14.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image15.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image16.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image17.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image18.png">
-<meta property="og:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image19.png">
-<meta property="og:updated_time" content="2019-03-30T15:33:04.815Z">
+<meta property="og:image" content="http://yoursite.com/20190303/image1.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image2.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image3.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image4.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image5.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image6.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image7.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image8.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image9.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image10.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image11.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image12.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image13.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image14.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image15.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image16.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image17.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image18.png">
+<meta property="og:image" content="http://yoursite.com/20190303/image19.png">
+<meta property="og:updated_time" content="2019-03-30T15:43:44.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发-使用OC&#x2F;Swift开发静态库&#x2F;动态库（SDK开发）">
 <meta name="twitter:description" content="近期工作主要是使用OC/Swift来开发各种SDK，静态库和动态库都有用到，于是想写篇文章记录一下SDK开发的一些内容，以及我在开发中遇到的坑和解决办法，希望能为大家提供帮助。 目前使用开发环境为xcode9~10.x，Swift版本是4.0~4.2。 一、iOS库的区别常见的自建iOS库分为两种形式，一种是xxx.a，还有一种是xxx.framework。这两种库有什么区别呢？ .a库只能是静态">
-<meta name="twitter:image" content="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image1.png">
+<meta name="twitter:image" content="http://yoursite.com/20190303/image1.png">
 
 
 
@@ -145,7 +145,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/03/iOS-OC-Swift-SDK/">
 
 
 
@@ -280,7 +280,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/iOS-OC-Swift-SDK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HXHXT">
@@ -387,52 +387,52 @@
 <p>当使用Swift和OC混编的时候，是个很头疼的事情，SDK不像App，无法使用桥接文件。如果要使用一些OC的文件，可以直接把.h文件设置成Public，然后在head文件中包含这个.h，这样Swift就可以调用OC。但是这种做法也有一个很大的问题，使用了哪些OC头文件调用者都是可以看得到的，个人觉得这样暴露一大堆头文件的方式并不合适，查了一下资料后使用Module来解决了这个问题，具体使用方式参见后面的例子。</p>
 <p>在使用Swift开发库这其中蹚了许多坑，个人认为目前环境Swift还不适合用来做商业级SDK开发，等到Swift5.0正式版出来之后，如果做到ABI稳定了，可以再做尝试。</p>
 <h2 id="二、搭建项目"><a href="#二、搭建项目" class="headerlink" title="二、搭建项目"></a>二、搭建项目</h2><p>搭建项目推荐使用WorkSpace来同时管理Demo工程和SDK工程，这样方便断点调试。我们先建立几个库的项目，下图中左边红标是.framework库，右边是.a库。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image1.png" alt="img"></p>
+<p><img src="/20190303/image1.png" alt="img"></p>
 <p>我们来创建2个framework类型的库（OC和Swift各一个），1个.a类型的库（只创建OC，Swift没有头文件无法调用.a库），创建一个demo工程，一个workspace文件，将他们都放在一个文件夹中。如下：</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image2.png" alt="img"></p>
+<p><img src="/20190303/image2.png" alt="img"></p>
 <p>打开workspace文件，把这几个创建的工程都添加进来。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image3.png" alt="img"></p>
+<p><img src="/20190303/image3.png" alt="img"></p>
 <p>framework类型默认类型为动态库Dynamic Library，所以静态库需要进入buildsetting修改Mach-o类型为static Library。我们先把这OC的framework库设置成静态库。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image4.png" alt="img"></p>
+<p><img src="/20190303/image4.png" alt="img"></p>
 <p>为demo工程添加这几个库的链接，动态库使用动态链接Embbed Binaries（会自动在下面的Linked Frameworks也添加一次），静态库使用静态链接Linked Frameworks。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image5.png" alt="img"></p>
+<p><img src="/20190303/image5.png" alt="img"></p>
 <p>因为引用了Swift库，我们需要将Build Setting中的Always Embed Swift这个选项设置成YES。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image6.png" alt="img"></p>
+<p><img src="/20190303/image6.png" alt="img"></p>
 <p>这样项目就搭建好了，使用Workspace的好处在于可以直接让demo和库一起运行，也可以直接断点到库中，便于调试。</p>
 <h2 id="三、编译库"><a href="#三、编译库" class="headerlink" title="三、编译库"></a>三、编译库</h2><p>编译库的时候注意选择编译的对象，当选择Generic IOS Device时，编译出来的库支持真机，选择模拟器的时候则编译出来的库只支持模拟器。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image7.png" alt="img"></p>
+<p><img src="/20190303/image7.png" alt="img"></p>
 <p>想要同时支持真机和模拟器，需要先单独编译库再使用命令合并库，合并.a库命令为lipo -create xxx.a xxx.a -output xxx.a，如果是合并.framework库，则把xxx.a替换成可执行文件就行了。当合并Swift库的时候还需要注意合并xxx.framework/Modules/xxx.swiftmodule下的内容。</p>
 <p>顺带一提如果想要拆分库，可以使用lipo xxx -thin armv7 -output xxx命令。</p>
 <p>因为我们已经给demo添加了对这些库的依赖，所以当我们编译demo的时候库也会跟着编译，不过如果我们在.a库中使用了bundle文件，bundle文件是不会跟随一起编译的，每次改变该文件需要重新手动编译。</p>
 <h2 id="四、调用库"><a href="#四、调用库" class="headerlink" title="四、调用库"></a>四、调用库</h2><p>调用.a库，我们可以选择OCStatic这个类作为对外接口类，直接在这个OCStatic.h文件中添加对外暴露的方法，在.m中实现该方法，然后将.h文件添加到demo工程中即可调用。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image8.png" alt="img"></p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image9.png" alt="img"></p>
+<p><img src="/20190303/image8.png" alt="img"></p>
+<p><img src="/20190303/image9.png" alt="img"></p>
 <p>调用OC的framework库，只需要将需要公开的头文件设置成public，然后可以将全部的公开头文件都包含进OCFramework.h这个文件中（为了方便引用），外部调用时就可以访问这些头文件了。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image10.png" alt="img"></p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image11.png" alt="img"></p>
+<p><img src="/20190303/image10.png" alt="img"></p>
+<p><img src="/20190303/image11.png" alt="img"></p>
 <p>调用swift的库，新建一个.swift文件，创建一个类，需要用public来修饰它，其中的属性想要暴露就使用public或者不加任何修饰，不想暴露就加上privite。想要暴露的方法则需要加上@objc public来修饰。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image12.png" alt="img"></p>
+<p><img src="/20190303/image12.png" alt="img"></p>
 <p>编译后会自动创建一个-swift.h文件，里面已经为我们自动生成了转换成OC的方法，方便OC工程调用。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image13.png" alt="img"></p>
+<p><img src="/20190303/image13.png" alt="img"></p>
 <h2 id="五、资源读取"><a href="#五、资源读取" class="headerlink" title="五、资源读取"></a>五、资源读取</h2><p>.a和.framework静态库使用图片资源时，通常是新建一个bundle的target，bundle是在macOS类型中找，建立后把setting中的Support Platforms或Base SDK改成iOS。创建bundle后系统会自动生成一个bundle文件夹，可以把图片资源和其他的非代码的资源比如xib、plist、html等等都放在里面，bundle中是不可以有代码文件的。</p>
 <p>bundle需要单独编译，.然后主工程需要把.bundle文件拖入，这里拖入的时候可以不选择copy items，这样当我们重新编译了bundle文件之后，主工程就不需要再次去拖入bundle文件了。</p>
 <p>在库中访问自身bundle资源的时候不能直接使用mainbundle，因为这里的结构其实是mainbundle/xxx.bundle，自己创建的bundle文件存在于主工程bundle下，所以需要先获取到自己的bundle，再来访问其中文件。获取自己的bundle可以使用路径的方式获取，然后自己创建的bundle是有单独bundle id的，也可以通过bundle id来获取。</p>
 <p>如果只有少量的几张图片资源，可以考虑转成base64的代码直接拷贝在代码中，这样使用库的时候就可以无需引入bundle了。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image14.png" alt="img"></p>
+<p><img src="/20190303/image14.png" alt="img"></p>
 <p>动态库我们在工程中使用了动态链接，使用资源则不需要去建立bundle，因为动态链接后库本身就是独立存在于mainbundle中的，自身就相当于另一个bundle，但在库中还是需要通过路径或bundle id来获取文件。</p>
 <h2 id="六、混编"><a href="#六、混编" class="headerlink" title="六、混编"></a>六、混编</h2><p>在Swift库中想混编OC时，没有办法使用桥接文件，但有一些其他办法可以调用OC。</p>
 <p>第一种方式是直接将要调用的OC的头文件设置成public，然后在head文件中import这个OC头文件，这样就可以让swift文件来调用，但是这样不仅对库暴露了头文件，也会对外部工程暴露头文件，这种方式显然不尽人意。</p>
 <p>第二种方式我们可以使用module来实现混编，原理大概就是利用了Swift的模块系统，把OC文件当做一个模块来调用。我们先建立一个module.modulemap文件，在里面添加需要混编的OC头文件支持。想让这个modulemap文件生效，需要前往Build Settings下的Swift Compiler - Search paths，在import paths 里面添加module.modulemap所在文件夹路径。设置完毕后，即可在.swift文件中import头文件后调用。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image15.png" alt="img"></p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image16.png" alt="img"></p>
+<p><img src="/20190303/image15.png" alt="img"></p>
+<p><img src="/20190303/image16.png" alt="img"></p>
 <h2 id="七、依赖"><a href="#七、依赖" class="headerlink" title="七、依赖"></a>七、依赖</h2><p>如果是.a库想要依赖其他的库，直接将需要依赖的库拖入.a库工程中，即可在文件中使用import来引入依赖库。</p>
 <p>如果是.framework库想要依赖其他库，可以直接将需要依赖的库拖入.framework库工程中，如果是同一个WorkSpace下管理的库，则可以在Linked Frameworks中直接添加该库的引用。添加完毕后即可在文件中使用import来引入依赖库。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image17.png" alt="img"></p>
+<p><img src="/20190303/image17.png" alt="img"></p>
 <p>如果需要依赖的库为静态库，则会包含进主库中，主工程使用主库无需再次引入依赖库。如果被依赖库为动态库，则只是依赖关系，主工程使用该库时需要再次引入被依赖动态库。</p>
 <h2 id="八、查看结构"><a href="#八、查看结构" class="headerlink" title="八、查看结构"></a>八、查看结构</h2><p>我们先编译一下demo，这里先就不用archive，直接看product文件夹中的.app文件。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image18.png" alt="img"></p>
+<p><img src="/20190303/image18.png" alt="img"></p>
 <p>我们右键选择显示包内容。可以看到以下内容。</p>
-<p><img src="/20190303/iOS开发-使用OC-Swift开发静态库-动态库（SDK开发）/image19.png" alt="img"></p>
+<p><img src="/20190303/image19.png" alt="img"></p>
 <p>我们的工程依赖了3个库，只有动态链接的Swift库存在于Framework文件夹下，可以看到它里面已经没有头文件了。</p>
 <p>而静态链接的库，无论是.a静态库还是.framwork静态库，都已经不见踪影，只留下了各自的bundle文件位于根目录，也就是主工程main bundle下。</p>
 <p>这里我们也可以看到Framework文件夹中，有很多Swift支持库，这就是由于ABI不稳定导致的结果了，目前Swift工程必须自带支持库，所以要比普通库大很多。而且经过Archive后会在外层又多一个Swift support文件夹，缺少这个文件夹的话是无法上传至Appstore的。</p>
@@ -468,7 +468,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20190218/Hello/" rel="next" title="Hello">
+              <a href="/2019/02/18/Hello/" rel="next" title="Hello">
                 <i class="fa fa-chevron-left"></i> Hello
               </a>
             
@@ -478,7 +478,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/20190325/iOS开发-修改图片的HSB（HSV）值/" rel="prev" title="iOS开发-修改图片的HSB（HSV）值">
+              <a href="/2019/03/25/iOS-HSB/" rel="prev" title="iOS开发-修改图片的HSB（HSV）值">
                 iOS开发-修改图片的HSB（HSV）值 <i class="fa fa-chevron-right"></i>
               </a>
             
